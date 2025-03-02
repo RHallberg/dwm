@@ -25,6 +25,12 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_blue, col_green },
 };
 
+static const char *const autostart[] = {
+	"st", NULL,
+  "dwmblocks", NULL,
+	NULL /* terminate */
+};
+
 /* tagging */
 static const char *tags[] = { "", "󰖟", "", "", "5", "6", "7", "8", "9" };
 
@@ -34,8 +40,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
+	{ "brave-browser",  NULL,       NULL,       1 << 1,       0,           -1 },
 };
 
 /* layout(s) */
