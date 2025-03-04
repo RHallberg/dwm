@@ -12,7 +12,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 0;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "Iosevka Nerd Font Mono:size=14" };
+static const char *fonts[]          = {"Iosevka Fixed Medium:size=13", "Iosevka Nerd Font Mono:size=22" };
 static const char dmenufont[]       = "Iosevka Nerd Font Mono:size=14";
 static const char col_gray1[]       = "#6C6F85";
 static const char col_green[]       = "#40A02B";
@@ -28,6 +28,7 @@ static const char *colors[][3]      = {
 static const char *const autostart[] = {
 	"st", NULL,
   "dwmblocks", NULL,
+  "mpd", NULL,
 	NULL /* terminate */
 };
 
@@ -105,9 +106,10 @@ static const Key keys[] = {
   { Mod4Mask,                     XK_F10,    spawn,          SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
 	{ Mod4Mask,                     XK_F12,    spawn,          SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%- && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)") },
 	{ Mod4Mask,                     XK_F11,    spawn,          SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; kill -44 $(pidof dwmblocks)") },
-	{ Mod4Mask,                     XK_F9,     spawn,          {.v = (const char*[]){ "mpc", "prev", NULL } } },
-	{ Mod4Mask,                     XK_F7,     spawn,          {.v = (const char*[]){ "mpc",  "next", NULL } } },
-	{ Mod4Mask,                     XK_F8,     spawn,          SHCMD("mpc pause-if-playing || mpc play")},
+	{ Mod4Mask,                     XK_F9,     spawn,          SHCMD("mpc next; kill -43 $(pidof dwmblocks)")},
+	{ Mod4Mask,                     XK_F7,     spawn,          SHCMD("mpc prev; kill -43 $(pidof dwmblocks)")},
+	{ Mod4Mask,                     XK_F8,     spawn,          SHCMD("mpc pause-if-playing || mpc play; kill -43 $(pidof dwmblocks)")},
+	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
