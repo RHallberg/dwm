@@ -12,7 +12,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 0;        /* vertical padding for statusbar */
-static const char *fonts[]          = {"Iosevka Fixed Medium:size=13", "Iosevka Nerd Font Mono:size=22" };
+static const char *fonts[]          = {"Iosevka Fixed Medium:size=13", "Iosevka Nerd Font Mono:size=26" };
 static const char dmenufont[]       = "Iosevka Nerd Font Mono:size=14";
 static const char col_gray1[]       = "#6C6F85";
 static const char col_green[]       = "#40A02B";
@@ -88,6 +88,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_blue, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *browsercmd[]  = { "brave", NULL };
 
 #include <X11/XF86keysym.h>
 
@@ -95,6 +96,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
