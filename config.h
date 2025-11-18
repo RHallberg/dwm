@@ -17,12 +17,14 @@ static const char dmenufont[]       = "Iosevka Nerd Font Mono:size=14";
 static const char col_gray1[]       = "#6C6F85";
 static const char col_green[]       = "#40A02B";
 static const char col_gray3[]       = "#eeeeee";
-static const char col_gray4[]       = "#eeeeee";
+static const char col_gray4[]       = "#e6e9ef";
 static const char col_blue[]        = "#1E66F5";
+static const char col_orange[]      = "#fe640b";
+static const char col_text[]        = "#4c4f69";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_blue },
-	[SchemeSel]  = { col_gray4, col_blue, col_green },
+	[SchemeNorm] = { col_text, col_gray4, col_gray1 },
+	[SchemeSel]  = { col_blue, col_gray4, col_blue },
 };
 
 static const char *const autostart[] = {
