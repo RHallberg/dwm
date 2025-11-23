@@ -51,7 +51,7 @@ static const Rule rules[] = {
 	{  NULL,       NULL,       "ncmpcpp",  1 << 3,       0,           -1 },
 	{  NULL,       NULL,       "Nicotine", 1 << 3,       0,           -1 },
 	{  "Spotify",  NULL,       NULL,       1 << 3,       0,           -1 },
-	{  "Steam",  NULL,       NULL,         1 << 4,       0,           -1 },
+	{  "steam",  NULL,       NULL,         1 << 4,       0,           -1 },
 
 
 };
