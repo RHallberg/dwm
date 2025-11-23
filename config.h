@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -46,6 +46,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",      NULL,       NULL,       0,            1,           -1 },
 	{ "Brave",     NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "zen",       NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "qutebrowser",     NULL,       NULL,       1 << 1,       0,           -1 },
 	{  NULL,       NULL,       "ncmpcpp",  1 << 3,       0,           -1 },
 	{  NULL,       NULL,       "Nicotine", 1 << 3,       0,           -1 },
 	{  "Spotify",  NULL,       NULL,       1 << 3,       0,           -1 },
@@ -97,7 +99,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_blue, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "ghostty", NULL };
-static const char *browsercmd[]  = { "brave", NULL };
+static const char *browsercmd[]  = { "zen-browser", NULL };
 static const char *emojipickercmd[] = { "emoji_picker", NULL};
 static const char *bookmarkcmd[] = { "bookmarks", NULL};
 static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL};
