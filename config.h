@@ -102,7 +102,9 @@ static const char *termcmd[]  = { "ghostty", NULL };
 static const char *browsercmd[]  = { "zen-browser", NULL };
 static const char *emojipickercmd[] = { "emoji_picker", NULL};
 static const char *bookmarkcmd[] = { "bookmarks", NULL};
+static const char *albumpickercmd[] = { "album-picker", NULL};
 static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL};
+
 
 #include <X11/XF86keysym.h>
 
@@ -113,6 +115,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = emojipickercmd } },
 	{ MODKEY|Mod4Mask,              XK_b,      spawn,          {.v = bookmarkcmd } },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = albumpickercmd } },
+	{ Mod4Mask,                     XK_m,      spawn,          {.v = wiremixcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -127,7 +131,6 @@ static const Key keys[] = {
 	{ Mod4Mask,                     XK_F9,     spawn,          SHCMD("mpc next; kill -43 $(pidof dwmblocks)")},
 	{ Mod4Mask,                     XK_F7,     spawn,          SHCMD("mpc prev; kill -43 $(pidof dwmblocks)")},
 	{ Mod4Mask,                     XK_F8,     spawn,          SHCMD("mpc pause-if-playing || mpc play; kill -43 $(pidof dwmblocks)")},
-	{ Mod4Mask,                     XK_m,      spawn,          {.v = wiremixcmd } },
 	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
