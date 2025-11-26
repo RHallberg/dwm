@@ -112,6 +112,7 @@ static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ Mod4Mask,                     XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = emojipickercmd } },
