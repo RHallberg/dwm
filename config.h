@@ -104,6 +104,7 @@ static const char *browsercmd[]  = { "zen-browser", NULL };
 static const char *emojipickercmd[] = { "emoji_picker", NULL};
 static const char *bookmarkcmd[] = { "bookmarks", NULL};
 static const char *albumpickercmd[] = { "album-picker", NULL};
+static const char *searchercmd[] = { "searcher", NULL};
 static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL};
 
 
@@ -117,6 +118,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = emojipickercmd } },
 	{ MODKEY|Mod4Mask,              XK_b,      spawn,          {.v = bookmarkcmd } },
+	{ MODKEY|Mod4Mask,              XK_s,      spawn,          {.v = searchercmd } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = albumpickercmd } },
 	{ Mod4Mask,                     XK_m,      spawn,          {.v = wiremixcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
