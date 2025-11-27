@@ -32,6 +32,7 @@ static const char *const autostart[] = {
   "mpd", NULL,
   "dwmblocks", NULL,
   "picom", NULL,
+  "dunst", NULL,
 	NULL /* terminate */
 };
 
@@ -105,6 +106,7 @@ static const char *emojipickercmd[] = { "emoji_picker", NULL};
 static const char *bookmarkcmd[] = { "bookmarks", NULL};
 static const char *albumpickercmd[] = { "album-picker", NULL};
 static const char *searchercmd[] = { "searcher", NULL};
+static const char *calccmd[] = { "calc", NULL};
 static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL};
 
 
@@ -121,6 +123,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod4Mask,              XK_s,      spawn,          {.v = searchercmd } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = albumpickercmd } },
 	{ Mod4Mask,                     XK_m,      spawn,          {.v = wiremixcmd } },
+	{ Mod4Mask,                     XK_c,      spawn,          {.v = calccmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
