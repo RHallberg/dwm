@@ -107,6 +107,7 @@ static const char *bookmarkcmd[] = { "bookmarks", NULL};
 static const char *albumpickercmd[] = { "album-picker", NULL};
 static const char *searchercmd[] = { "searcher", NULL};
 static const char *calccmd[] = { "calc", NULL};
+static const char *screenrecordcmd[] = { "screenrecord", NULL};
 static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL};
 
 
@@ -122,6 +123,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod4Mask,              XK_b,      spawn,          {.v = bookmarkcmd } },
 	{ MODKEY|Mod4Mask,              XK_s,      spawn,          {.v = searchercmd } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = albumpickercmd } },
+	{ MODKEY|ShiftMask|Mod4Mask,    XK_r,      spawn,          {.v = screenrecordcmd } },
 	{ Mod4Mask,                     XK_m,      spawn,          {.v = wiremixcmd } },
 	{ Mod4Mask,                     XK_c,      spawn,          {.v = calccmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
