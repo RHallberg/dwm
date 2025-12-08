@@ -86,6 +86,26 @@ static const Layout layouts[] = {
 	{ NULL,       NULL },
 };
 
+/* signal definitions */
+/* signum must be greater than 0 */
+/* trigger signals using `xsetroot -name "fsignal:<signum>"` */
+static Signal signals[] = {
+	/* signum       function        argument  */
+	{ 1,            setlayout,      {.v = &layouts[0]} },
+	{ 2,            setlayout,      {.v = &layouts[1]} },
+	{ 3,            setlayout,      {.v = &layouts[2]} },
+	{ 4,            setlayout,      {.v = &layouts[3]} },
+	{ 5,            setlayout,      {.v = &layouts[4]} },
+	{ 6,            setlayout,      {.v = &layouts[5]} },
+	{ 7,            setlayout,      {.v = &layouts[6]} },
+	{ 8,            setlayout,      {.v = &layouts[7]} },
+	{ 9,            setlayout,      {.v = &layouts[8]} },
+	{ 10,            setlayout,      {.v = &layouts[9]} },
+	{ 11,            setlayout,      {.v = &layouts[10]} },
+	{ 12,            setlayout,      {.v = &layouts[11]} },
+	{ 13,            setlayout,      {.v = &layouts[12]} },
+	{ 14,            setlayout,      {.v = &layouts[13]} },
+};
 /* key definitions */
 #define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
@@ -106,6 +126,7 @@ static const char *emojipickercmd[] = { "emoji_picker", NULL};
 static const char *bookmarkcmd[] = { "bookmarks", NULL};
 static const char *albumpickercmd[] = { "album-picker", NULL};
 static const char *searchercmd[] = { "searcher", NULL};
+static const char *layoutmenucmd[] = { "layout-menu", NULL};
 static const char *calccmd[] = { "calc", NULL};
 static const char *screenrecordcmd[] = { "screenrecord", NULL};
 static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL};
@@ -126,6 +147,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask|Mod4Mask,    XK_r,      spawn,          {.v = screenrecordcmd } },
 	{ Mod4Mask,                     XK_m,      spawn,          {.v = wiremixcmd } },
 	{ Mod4Mask,                     XK_c,      spawn,          {.v = calccmd } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = layoutmenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
