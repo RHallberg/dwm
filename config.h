@@ -7,6 +7,7 @@ static const unsigned int gappih    = 20;       /* horiz inner gap between windo
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -44,16 +45,18 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",      NULL,       NULL,       0,            1,           -1 },
-	{ "Brave",     NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "zen",       NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "qutebrowser",     NULL,       NULL,       1 << 1,       0,           -1 },
-	{  NULL,       NULL,       "ncmpcpp",  1 << 3,       0,           -1 },
-	{  NULL,       NULL,       "Nicotine", 1 << 3,       0,           -1 },
-	{  "euphonica",  NULL,       NULL,       1 << 3,       0,           -1 },
-	{  "Spotify",  NULL,       NULL,       1 << 3,       0,           -1 },
-	{  "steam",  NULL,       NULL,         1 << 4,       0,           -1 },
+/* class          instance    title        tags mask  isfloating  isterminal  noswallow  monitor */
+{ "Gimp",         NULL,       NULL,        0,         1,           0,           0,         -1 },
+{ "Brave",        NULL,       NULL,        1 << 1,    0,           0,           0,         -1 },
+{ "zen",          NULL,       NULL,        1 << 1,    0,           0,           0,         -1 },
+{ "qutebrowser",  NULL,       NULL,        1 << 1,    0,           0,           0,         -1 },
+{ NULL,           NULL,       "ncmpcpp",   1 << 3,    0,           0,           0,         -1 },
+{ NULL,           NULL,       "Nicotine",  1 << 3,    0,           0,           0,         -1 },
+{ "euphonica",    NULL,       NULL,        1 << 3,    0,           0,           0,         -1 },
+{ "Spotify",      NULL,       NULL,        1 << 3,    0,           0,           0,         -1 },
+{ "steam",        NULL,       NULL,        1 << 4,    0,           0,           0,         -1 },
+{ NULL,           "ghostty",  NULL,        0,         0,           1,           0,         -1 },
+{ "St",           NULL,       NULL,        0,         0,           1,           0,         -1 },
 
 
 };
