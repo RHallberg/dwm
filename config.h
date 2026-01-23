@@ -130,7 +130,7 @@ static const char *bookmarkcmd[] = { "bookmarks", NULL};
 static const char *albumpickercmd[] = { "album-picker", NULL};
 static const char *searchercmd[] = { "searcher", NULL};
 static const char *layoutmenucmd[] = { "layout-menu", NULL};
-static const char *calccmd[] = { "calc", NULL};
+static const char *calccmd[] = { "dmenu", "-C", "-p", "calculate", NULL};
 static const char *screenrecordcmd[] = { "screenrecord", NULL};
 static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL};
 
