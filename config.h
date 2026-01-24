@@ -108,6 +108,7 @@ static Signal signals[] = {
 	{ 12,            setlayout,      {.v = &layouts[11]} },
 	{ 13,            setlayout,      {.v = &layouts[12]} },
 	{ 14,            setlayout,      {.v = &layouts[13]} },
+	{ 15,            quit,           {1} },
 };
 /* key definitions */
 #define MODKEY Mod1Mask
@@ -133,6 +134,7 @@ static const char *layoutmenucmd[] = { "layout-menu", NULL};
 static const char *calccmd[] = { "dmenu", "-C", "-p", "calculate", NULL};
 static const char *screenrecordcmd[] = { "screenrecord", NULL};
 static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL};
+static const char *shutdownmenucmd[] = { "shutdown-menu", NULL};
 
 
 #include <X11/XF86keysym.h>
@@ -206,7 +208,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = shutdownmenucmd} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 };
 
