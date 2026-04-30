@@ -135,6 +135,7 @@ static const char *calccmd[] = { "dmenu", "-C", "-p", "calculate", NULL};
 static const char *screenrecordcmd[] = { "screenrecord", NULL};
 static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL};
 static const char *shutdownmenucmd[] = { "shutdown-menu", NULL};
+static const char *notescmd[] = { "notes", NULL};
 
 
 #include <X11/XF86keysym.h>
@@ -152,6 +153,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask|Mod4Mask,    XK_r,      spawn,          {.v = screenrecordcmd } },
 	{ Mod4Mask,                     XK_m,      spawn,          {.v = wiremixcmd } },
 	{ Mod4Mask,                     XK_c,      spawn,          {.v = calccmd } },
+	{ Mod4Mask,                     XK_n,      spawn,          {.v = notescmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = layoutmenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -167,6 +169,8 @@ static const Key keys[] = {
 	{ Mod4Mask,                     XK_F9,     spawn,          SHCMD("playerctl next -p 'spotify' || mpc next; kill -43 $(pidof dwmblocks)")},
 	{ Mod4Mask,                     XK_F7,     spawn,          SHCMD("playerctl previous -p 'spotify' || mpc prev; kill -43 $(pidof dwmblocks)")},
 	{ Mod4Mask,                     XK_F8,     spawn,          SHCMD("playerctl play-pause -p 'spotify' || (mpc pause-if-playing || mpc play); kill -43 $(pidof dwmblocks)")},
+	{ Mod4Mask,                     XK_t,     spawn,          SHCMD("dwm-tabs attach")},
+	{ Mod4Mask|ShiftMask,           XK_t,     spawn,          SHCMD("dwm-tabs detach")},
 	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
