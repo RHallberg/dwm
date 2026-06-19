@@ -12,7 +12,7 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 0;        /* vertical padding for statusbar */
+static const int vertpadbar         = 2;        /* vertical padding for statusbar */
 static const char *fonts[]          = {"Iosevka Fixed Medium:size=13", "Iosevka Nerd Font Mono:size=26" };
 static const char dmenufont[]       = "Iosevka Nerd Font Mono:size=14";
 static const char col_gray1[]       = "#6C6F85";
@@ -67,7 +67,7 @@ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] 
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
-static const int refreshrate = 120;  /* refresh rate (per second) for client move/resize */
+static const int refreshrate = 144;  /* refresh rate (per second) for client move/resize */
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
