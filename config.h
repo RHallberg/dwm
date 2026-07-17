@@ -131,7 +131,7 @@ static const char *browsercmd[]  = { "zen-browser", NULL };
 static const char *emojipickercmd[] = { "emoji_picker", NULL};
 static const char *bookmarkcmd[] = { "bookmarks", NULL};
 static const char *otherbookmarkcmd[] = { "bookmarks-qute", NULL};
-static const char *albumpickercmd[] = { "album-picker", NULL};
+static const char *albumpickercmd[] = { "albumpicker", NULL};
 static const char *searchercmd[] = { "searcher", NULL};
 static const char *layoutmenucmd[] = { "layout-menu", NULL};
 static const char *calccmd[] = { "dmenu", "-C", "-p", "calculate", NULL};
@@ -139,6 +139,7 @@ static const char *screenrecordcmd[] = { "screenrecord", NULL};
 static const char *wiremixcmd[] = { "ghostty", "--initial-command=wiremix", NULL};
 static const char *shutdownmenucmd[] = { "shutdown-menu", NULL};
 static const char *notescmd[] = { "notes", NULL};
+static const char *mpvwebcmd[] = { "mpv-web", NULL};
 
 
 #include <X11/XF86keysym.h>
@@ -153,6 +154,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod4Mask,              XK_b,      spawn,          {.v = bookmarkcmd } },
 	{ Mod4Mask,                     XK_b,      spawn,          {.v = otherbookmarkcmd } },
 	{ MODKEY|Mod4Mask,              XK_s,      spawn,          {.v = searchercmd } },
+	{ MODKEY|Mod4Mask,              XK_v,      spawn,          {.v = mpvwebcmd } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = albumpickercmd } },
 	{ MODKEY|ShiftMask|Mod4Mask,    XK_r,      spawn,          {.v = screenrecordcmd } },
 	{ Mod4Mask,                     XK_m,      spawn,          {.v = wiremixcmd } },
