@@ -177,6 +177,7 @@ static const Key keys[] = {
 	{ Mod4Mask,                     XK_F8,     spawn,          SHCMD("playerctl play-pause -p 'spotify' || (mpc pause-if-playing || mpc play); kill -43 $(pidof dwmblocks)")},
 	{ Mod4Mask,                     XK_t,     spawn,          SHCMD("dwm-tabs attach")},
 	{ Mod4Mask|ShiftMask,           XK_t,     spawn,          SHCMD("dwm-tabs detach")},
+	{ Mod4Mask|ShiftMask,           XK_y,     spawn,          SHCMD("ghostty -e yazi")},
 	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
