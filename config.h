@@ -132,7 +132,6 @@ static const char *emojipickercmd[] = { "emoji_picker", NULL};
 static const char *bookmarkcmd[] = { "bookmarks", NULL};
 static const char *otherbookmarkcmd[] = { "bookmarks-qute", NULL};
 static const char *albumpickercmd[] = { "albumpicker", NULL};
-static const char *searchercmd[] = { "searcher", NULL};
 static const char *layoutmenucmd[] = { "layout-menu", NULL};
 static const char *calccmd[] = { "dmenu", "-C", "-p", "calculate", NULL};
 static const char *screenrecordcmd[] = { "screenrecord", NULL};
@@ -153,7 +152,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = emojipickercmd } },
 	{ MODKEY|Mod4Mask,              XK_b,      spawn,          {.v = bookmarkcmd } },
 	{ Mod4Mask,                     XK_b,      spawn,          {.v = otherbookmarkcmd } },
-	{ MODKEY|Mod4Mask,              XK_s,      spawn,          {.v = searchercmd } },
+	{ MODKEY|Mod4Mask,              XK_s,      spawn,          SHCMD("searcher ~/.local/share/search_engines/engines.csv")},
+	{ Mod4Mask,                     XK_s,      spawn,          SHCMD("searcher ~/.local/share/search_engines/main_engines.csv") },
 	{ MODKEY|Mod4Mask,              XK_v,      spawn,          {.v = mpvwebcmd } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = albumpickercmd } },
 	{ MODKEY|ShiftMask|Mod4Mask,    XK_r,      spawn,          {.v = screenrecordcmd } },
@@ -175,9 +175,9 @@ static const Key keys[] = {
 	{ Mod4Mask,                     XK_F9,     spawn,          SHCMD("playerctl next -p 'spotify' || mpc next; kill -43 $(pidof dwmblocks)")},
 	{ Mod4Mask,                     XK_F7,     spawn,          SHCMD("playerctl previous -p 'spotify' || mpc prev; kill -43 $(pidof dwmblocks)")},
 	{ Mod4Mask,                     XK_F8,     spawn,          SHCMD("playerctl play-pause -p 'spotify' || (mpc pause-if-playing || mpc play); kill -43 $(pidof dwmblocks)")},
-	{ Mod4Mask,                     XK_t,     spawn,          SHCMD("dwm-tabs attach")},
-	{ Mod4Mask|ShiftMask,           XK_t,     spawn,          SHCMD("dwm-tabs detach")},
-	{ Mod4Mask|ShiftMask,           XK_y,     spawn,          SHCMD("ghostty -e yazi")},
+	{ Mod4Mask,                     XK_t,      spawn,          SHCMD("dwm-tabs attach")},
+	{ Mod4Mask|ShiftMask,           XK_t,      spawn,          SHCMD("dwm-tabs detach")},
+	{ Mod4Mask|ShiftMask,           XK_y,      spawn,          SHCMD("ghostty -e yazi")},
 	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
